@@ -20,7 +20,8 @@ application과 JDBC 사이 동작에서 동작 <br>
 
 [CRUD](https://github.com/pcochoco/jpa_basic/commit/96ac622eeb647ef23da9e5614c6fc77ecb14669b)
 
-##Persistence Context
+## Persistence Context
+[Persistence Context]()
 엔티티를 영구 저장하는 환경 (논리적 개념)<br>
 1. 1차 캐시 저장 후 transaction commit 시 객체 변경 정보를 모아 한꺼번에 쿼리 날림
   *같은 EntityManager에서 비교하는 게 아니라면 다른 객체간 비교가 되는 것
@@ -34,10 +35,9 @@ application과 JDBC 사이 동작에서 동작 <br>
 - new, transient (비영속) : 영속성 context와 관련 x
 - managed (영속) : 객체 영구 저장 = db 관리
 - detached (준영속) : 영속 상태 -> 분리
-- removed (삭제)
-[Persistence Context]()
+- removed (삭제) <br>
 
-##DDL 
+## DDL 
 
 ##Mapping
 [Field, Column]()
