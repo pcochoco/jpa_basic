@@ -1,7 +1,7 @@
 # JPA 기본 정리
 JPA는 객체끼리, 관계형 DB끼리 설계 후 mapping하기 위한 중간 프레임워크 역할 <br>
 application과 JDBC 사이 동작에서 동작 <br>
-[JPA setting](https://github.com/pcochoco/jpa_basic/commit/4b1a637e1a3119a1c44791c06217ccf0c3bb798d)
+[JPA setting](https://github.com/pcochoco/jpa_basic/blob/main/src/main/resources/META-INF/persistence.xml)
 
 ## JPA를 사용하는 이유 
 1. sql 중심 개발 -> 객체 중심으로 
