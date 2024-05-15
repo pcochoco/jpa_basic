@@ -1,11 +1,14 @@
-package com.example.jpa_basic;
+package com.example.jpa_basic.doamin;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Getter @Setter
 public class Team {
     @Id
     @GeneratedValue

@@ -1,5 +1,7 @@
-package com.example.jpa_basic;
+package com.example.jpa_basic.doamin;
 
+import com.example.jpa_basic.RoleType;
+import com.example.jpa_basic.doamin.Team;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,4 +43,17 @@ public class Member {
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
+    //연관관계 메서드
+    public void addTeam(Team team){
+        this.team = team;
+        team.getMembers().add(this);
+    }
+
+    public static Member findMember(Long id){
+        for (Member member : team.getMembers()){ //
+            if (member.getId() == id){
+                return member;
+            }
+        }
+    }
 }

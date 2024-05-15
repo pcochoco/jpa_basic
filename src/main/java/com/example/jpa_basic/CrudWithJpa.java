@@ -1,5 +1,6 @@
 package com.example.jpa_basic;
 
+import com.example.jpa_basic.doamin.Member;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -12,7 +13,7 @@ import java.util.List;
 //crud를 활용하는 예시
 
 public class CrudWithJpa {
-    public static void main(String[] args) {
+    public static void CrudWithJpa() {
         //EntityManagerFactory는 db당 하나씩 존재 -> connection 생성
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
 
