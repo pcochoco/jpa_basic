@@ -49,7 +49,7 @@ public class Member {
         team.getMembers().add(this);
     }
 
-    public static Member findMember(Long id){
+    public static Member findMember(String name){
         for (Member member : team.getMembers()){ //
             if (member.getId() == id){
                 return member;

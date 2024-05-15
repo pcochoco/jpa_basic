@@ -10,7 +10,7 @@ import com.example.jpa_basic.doamin.Team;
 
 import java.util.List;
 
-//연관관계 메서드가 없을 때의 문제점 관련 
+//연관관계 메서드가 없을 때의 문제점 관련
 public class EntityMapping {
     public static void entity_mapping() {
 
