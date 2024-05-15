@@ -39,9 +39,9 @@ application과 JDBC 사이 동작에서 동작 <br>
 
 ## DDL 사용 x 
 -create : 테이블 삭제 후 생성  
--create-drop : 종료 시점 테이블 삭제 
--update 
--validate : 정상 매핑 확인 
+-create-drop : 종료 시점 테이블 삭제    
+-update  
+-validate : 정상 매핑 확인  
 
 ## Mapping
 
