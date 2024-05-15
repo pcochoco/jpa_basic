@@ -10,9 +10,10 @@ import com.example.jpa_basic.doamin.Team;
 
 import java.util.List;
 
-//연관관계 메서드가 없을 때의 문제점 관련
+
 public class EntityMapping {
-    public static void entity_mapping() {
+    //연관관계 메서드가 없을 때의 문제점
+    public static void without_relation() {
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
 
@@ -62,6 +63,11 @@ public class EntityMapping {
         for (Member m : members) {
             System.out.println("m = " + m.getId() + ": " + m.getName());
         }
+    }
+
+    //연관관계 메서드가 있는 경우
+    public static void with_relation(){
+
     }
 
 }
