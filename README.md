@@ -26,6 +26,9 @@ application과 JDBC 사이 동작에서 동작 <br>
 1. 1차 캐시 저장 후 transaction commit 시 객체 변경 정보를 모아 한꺼번에 쿼리 날림
   *같은 EntityManager에서 비교하는 게 아니라면 다른 객체간 비교가 되는 것
 
+  1차 캐시에 없다면 db에서 조회하는 쿼리 실행 <br>
+  [1차 cache]()
+  
 2. transactional write behind
      쓰기 지연 sql 저장소에 sql 저장 후 commit 되는 순간 db로
 3. dirty checking
@@ -48,7 +51,7 @@ application과 JDBC 사이 동작에서 동작 <br>
 [Field, Column]()
 
 키 매핑
-IDENTITY, SEQUENCE, TABLE, (DEFAULT)AUTO
+IDENTITY : key 바로 받도록 예외 허용, SEQUENCE : db로부터 한번에 받아올 양 정해둠, TABLE : key 생성용, (DEFAULT)AUTO
 [Key]()
 
 연관관계 매핑 
@@ -57,4 +60,20 @@ IDENTITY, SEQUENCE, TABLE, (DEFAULT)AUTO
   foreign key(fk) 가 있는 쪽
 - 연관관계 메서드
   양쪽 방향 모두 값을 지니도록 역할
-[연관관계]()
+[연관관계 메서드]()
+[연관관계 문제]()
+
+-연관관계 종류
+  N : 1 (fk = 연관관계 주인)
+  1 : N (1이 주인이지만 N이 fk를 가지도록)
+  1 : 1 (둘다 주인 가능)
+  N : M (실무 x -> 연결 테이블용 엔티티 둠)
+
+### 심화 매핑
+- 상속관계
+  1. joined
+  2. single_table
+  3. table_per_class
+- mapped super class
+
+## proxy와 연관관계 관리 
