@@ -1,7 +1,5 @@
 package com.example.jpa_basic.doamin;
 
-import com.example.jpa_basic.RoleType;
-import com.example.jpa_basic.doamin.Team;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

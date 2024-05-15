@@ -38,9 +38,10 @@ public class EntityMapping {
         member3.setName("memberC");
         /*team.getMembers().add(member3); //연관관계에서 역방향이 되는 경우 : team에서 저장함
             flush되기 전 team이 참조하는 member은 순수 객체상태 member3
-            flush된 후 연관관계 주인은 Member이므로 member1과 member2만 list에
-
+            flush된 후 연관관계 주인은 Member이므로 member1과 member2만 team과 연관관계를 갖게 됨
+            setTeam으로 단방향으로만 field을 주입하지 않고 양쪽 모두 값을 넣어줄 필요성이 생김
          */
+
         member3.addTeam(team);
         em.persist(member3);
 

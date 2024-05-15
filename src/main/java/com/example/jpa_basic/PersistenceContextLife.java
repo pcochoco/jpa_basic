@@ -54,7 +54,7 @@ public class PersistenceContextLife {
         1차 cache의 snapshot 기준 변경 정보에 따라 sql 쓰기 지연 저장소에 저장
 
         flush란 변경 내용 db에 반영
-        em.flush 호출, transaction commit, jpql 실행 시 동작 
+        em.flush 호출, transaction commit, jpql 실행 시 동작
          */
         member.setName("B");
         member.setName("C"); //sql 안보내짐
