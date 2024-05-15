@@ -35,9 +35,14 @@ public class Member {
     @Transient
     private int temp;
 
-    //연관관계 주인은 fk가 있는 쪽
-    //수정 가능 / 아닌 쪽은 읽기만
-    @ManyToOne
+    //연관관계 주인
+    //fk가 있는 쪽 : 수정 가능 / 아닌 쪽은 읽기만
+    @ManyToOne(fetch = FetchType.LAZY)
+    /*LAZY 설정
+        함께 매번 동작하지 않는 이상 지연처리 -> 연관된 객체는 필요한 순간에 가져오도록
+        필요없는 정보를 함께 조회하는 것은 성능상 손해
+        XToOne에 가급적 지연로딩만 활용 : 즉시로딩은 N + 1 문제
+     */
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
