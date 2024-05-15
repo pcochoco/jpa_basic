@@ -5,6 +5,8 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
+import java.util.List;
+
 //jpa는 객체와 관계형 db 각각 설계 후 매핑하는 중간 프레임워크 역할
 //interface들의 집합으로 특정 db에 종속 x -> db dialect 설정해 통합적 활용
 //crud를 활용하는 예시
