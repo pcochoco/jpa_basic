@@ -23,4 +23,9 @@ public abstract class Item {
     private String name;
     private int price;
     private int stockQuantity;
+
+    /*
+    OrderItem - Order과 달리 OneToMany를 가지지 않는 이유
+
+     */
 }
