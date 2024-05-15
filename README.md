@@ -18,10 +18,10 @@ application과 JDBC 사이 동작에서 동작 <br>
   - 데이터 접근 추상화 벤더 독립성 : JPA db dialect로 db간 통합 
 
 
-[CRUD](https://github.com/pcochoco/jpa_basic/commit/96ac622eeb647ef23da9e5614c6fc77ecb14669b)
+[CRUD](https://github.com/pcochoco/jpa_basic/blob/main/src/main/java/com/example/jpa_basic/CrudWithJpa.java)
 
-## Persistence Context
-[Persistence Context]()
+## Persistence Context 
+[Persistence Context](https://github.com/pcochoco/jpa_basic/blob/main/src/main/java/com/example/jpa_basic/PersistenceContextLife.java) <br>
 엔티티를 영구 저장하는 환경 (논리적 개념)<br>
 1. 1차 캐시 저장 후 transaction commit 시 객체 변경 정보를 모아 한꺼번에 쿼리 날림
   *같은 EntityManager에서 비교하는 게 아니라면 다른 객체간 비교가 되는 것
@@ -37,9 +37,24 @@ application과 JDBC 사이 동작에서 동작 <br>
 - detached (준영속) : 영속 상태 -> 분리
 - removed (삭제) <br>
 
-## DDL 
+## DDL 사용 x 
+-create : 테이블 삭제 후 생성  
+-create-drop : 종료 시점 테이블 삭제 
+-update 
+-validate : 정상 매핑 확인 
 
-##Mapping
+## Mapping
+
 [Field, Column]()
+
+키 매핑
+IDENTITY, SEQUENCE, TABLE, (DEFAULT)AUTO
 [Key]()
+
+연관관계 매핑 
+- 연관관계의 주인
+  변경이 되는 쪽 @JoinColumn <-> 읽기만 가능 mappedBy = ""
+  foreign key(fk) 가 있는 쪽
+- 연관관계 메서드
+  양쪽 방향 모두 값을 지니도록 역할
 [연관관계]()
