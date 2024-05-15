@@ -19,3 +19,27 @@ application과 JDBC 사이 동작에서 동작 <br>
 
 
 [CRUD](https://github.com/pcochoco/jpa_basic/commit/96ac622eeb647ef23da9e5614c6fc77ecb14669b)
+
+##Persistence Context
+엔티티를 영구 저장하는 환경 (논리적 개념)<br>
+1. 1차 캐시 저장 후 transaction commit 시 객체 변경 정보를 모아 한꺼번에 쿼리 날림
+  *같은 EntityManager에서 비교하는 게 아니라면 다른 객체간 비교가 되는 것
+
+2. transactional write behind
+     쓰기 지연 sql 저장소에 sql 저장 후 commit 되는 순간 db로
+3. dirty checking
+   변경 시 1차 캐시 저장 snapshot과 비교 후 달라진 부분에 맞게 sql을 생성해 쓰기 지연 sql로 저장, commit 시 flush
+   *flust : 변경 내용을 db에 반영 (em.flush, transaction commit, JPQL 실행) 
+<영속성 생명주기> 
+- new, transient (비영속) : 영속성 context와 관련 x
+- managed (영속) : 객체 영구 저장 = db 관리
+- detached (준영속) : 영속 상태 -> 분리
+- removed (삭제)
+[Persistence Context]()
+
+##DDL 
+
+##Mapping
+[Field, Column]()
+[Key]()
+[연관관계]()
