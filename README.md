@@ -20,8 +20,7 @@ application과 JDBC 사이 동작에서 동작 <br>
 
 [CRUD](https://github.com/pcochoco/jpa_basic/blob/main/src/main/java/com/example/jpa_basic/CrudWithJpa.java)
 
-## Persistence Context 
-[Persistence Context](https://github.com/pcochoco/jpa_basic/blob/main/src/main/java/com/example/jpa_basic/PersistenceContextLife.java) <br>
+## [Persistence Context](https://github.com/pcochoco/jpa_basic/blob/main/src/main/java/com/example/jpa_basic/PersistenceContextLife.java) <br>
 엔티티를 영구 저장하는 환경 (논리적 개념)<br>
 1. 1차 캐시 저장 후 transaction commit 시 객체 변경 정보를 모아 한꺼번에 쿼리 날림
   *같은 EntityManager에서 비교하는 게 아니라면 다른 객체간 비교가 되는 것
@@ -60,8 +59,8 @@ IDENTITY : key 바로 받도록 예외 허용, SEQUENCE : db로부터 한번에 
   foreign key(fk) 가 있는 쪽
 - 연관관계 메서드
   양쪽 방향 모두 값을 지니도록 역할
-[연관관계 메서드]()
-[연관관계 문제]()
+[연관관계 메서드](https://github.com/pcochoco/jpa_basic/blob/main/src/main/java/com/example/jpa_basic/domain/Member.java)
+[연관관계 문제](https://github.com/pcochoco/jpa_basic/blob/main/src/main/java/com/example/jpa_basic/EntityMapping.java)
 
 - 연관관계 종류
   N : 1 (fk = 연관관계 주인)
@@ -70,13 +69,13 @@ IDENTITY : key 바로 받도록 예외 허용, SEQUENCE : db로부터 한번에 
   N : M (실무 x -> 연결 테이블용 엔티티 둠)
 
 ### 심화 매핑
-- 상속관계
+- [상속관계](https://github.com/pcochoco/jpa_basic/blob/main/src/main/java/com/example/jpa_basic/domain/Movie.java)
   1. joined
   2. single_table
   3. table_per_class
-- mapped super class
+- [mapped super class](https://github.com/pcochoco/jpa_basic/blob/main/src/main/java/com/example/jpa_basic/domain/BaseEntity.java)
 
-## proxy와 연관관계 관리 
+## [proxy와 연관관계](https://github.com/pcochoco/jpa_basic/blob/main/src/main/java/com/example/jpa_basic/ProxyExample.java) 
 실제 클래스 상속 -> 겉모양이 같음 
 실제 값 필요 시까지 db 조회 미룸
 연관 entity를 모두 가져올 필요 없을 시 사용 
@@ -85,4 +84,20 @@ IDENTITY : key 바로 받도록 예외 허용, SEQUENCE : db로부터 한번에 
 - 원본 엔티티 상속 상태 : instance of를 사용 (다른 transaction일 때)
 - 영속성 컨텍스트에 이미 엔티티가 있으면 프록시 호출에도 엔티티 반환
 
+### 영속성 전이 : 영속 상태를 연관 엔티티도 같이 유지할 때 
+### 고아 객체 : 부모와 연관관계가 끊어진 엔티티 
+=> 둘다 소유하는 개념의 엔티티에 적용 
 
+
+### 값 타입
+1. 엔티티 타입 -> 수정되어도 식별자로 추적
+2. 값 타입 -> 엔티티 생명주기 의존, 단순 값
+     - 기본 값 : 보통 수정 불가
+     - Embedded : 기본 값 모아 새 값으로
+     - 불변 객체 : 공유되더라도 수정 불가
+     - collection : 값 타입 하나 이상 지정 시 List, ... -> db로 저장할 별도 테이블 (권장 x)
+         - 식별자 개념 x
+         - 변경 시 추적 x
+         - 변경 시 엔티티 값 삭제 후 저장
+         - null x -> 중복 방지 column pk
+       => 1대다 연관관계로 설정 
