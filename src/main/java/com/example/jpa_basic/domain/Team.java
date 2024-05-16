@@ -24,6 +24,9 @@ public class Team {
     => 두 개념은 특정 엔티티가 해당이 엔티를 소유하는 경우 사용
     다른 엔티티에서 예상치 못한 추가, 삭제 방지
     부모를 통한 자식의 생명주기 관리 -> 도메인 주도 설계의 Aggregate Root 개념 구현에 유용
+
+    team.getMembers().remove(0)
+    : 부모 엔티티에서 연관관계 끊었으므로 해당 member은 고아객체 -> 자동 삭제 
      */
     List<Member> members = new ArrayList<>();
     public void addMember(Member member){

@@ -35,6 +35,9 @@ public class Member {
     @Transient
     private int temp;
 
+    @Embedded
+    private Address address;
+
     //연관관계 주인
     //fk가 있는 쪽 : 수정 가능 / 아닌 쪽은 읽기만
     @ManyToOne(fetch = FetchType.LAZY)

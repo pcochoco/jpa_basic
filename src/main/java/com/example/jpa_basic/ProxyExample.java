@@ -80,7 +80,8 @@ public class ProxyExample {
         em.detach(refMem3);
         System.out.println("refMem3 = " + refMem3.getId() + ":" + refMem3.getName());
 
-        //(4) 프록시 관련 메서드 
+        //(4) 프록시 관련 메서드
+
     }
 
 
