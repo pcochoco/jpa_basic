@@ -5,8 +5,8 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
-import com.example.jpa_basic.doamin.Member;
-import com.example.jpa_basic.doamin.Team;
+import com.example.jpa_basic.domain.Member;
+import com.example.jpa_basic.domain.Team;
 
 import java.util.List;
 

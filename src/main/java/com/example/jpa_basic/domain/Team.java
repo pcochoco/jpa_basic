@@ -1,4 +1,4 @@
-package com.example.jpa_basic.doamin;
+package com.example.jpa_basic.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;

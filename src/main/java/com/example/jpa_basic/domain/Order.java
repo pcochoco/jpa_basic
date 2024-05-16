@@ -1,10 +1,11 @@
-package com.example.jpa_basic.doamin;
+package com.example.jpa_basic.domain;
 
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+//Order과 OrderItem은 일대다 관계
 public class Order {
     @Id @GeneratedValue
     @Column(name = "ORDER_ID")

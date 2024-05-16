@@ -1,9 +1,8 @@
 package com.example.jpa_basic;
 
-import com.example.jpa_basic.doamin.Member;
+import com.example.jpa_basic.domain.Member;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
 /*persistence context의 life cycle

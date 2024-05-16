@@ -1,4 +1,4 @@
-package com.example.jpa_basic.doamin;
+package com.example.jpa_basic.domain;
 
 import jakarta.persistence.*;
 
@@ -26,6 +26,7 @@ public abstract class Item {
 
     /*
     OrderItem - Order과 달리 OneToMany를 가지지 않는 이유
-
+    Order, Item의 일대다 관계와 달리 OrderItem, Item은 명확한 관계를 지니지 않음
+    ex) 주문상품에 상품이 몇개 들어갈 수 있다
      */
 }
