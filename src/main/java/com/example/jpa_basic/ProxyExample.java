@@ -6,6 +6,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
+import org.hibernate.Hibernate;
 
 /*
     proxy 객체 = 실제 객체 참조 보관용 가짜 객체
@@ -81,7 +82,14 @@ public class ProxyExample {
         System.out.println("refMem3 = " + refMem3.getId() + ":" + refMem3.getName());
 
         //(4) 프록시 관련 메서드
+        Member refMem4 = em.getReference(Member.class, member.getId());
+        System.out.println("isLoaed ? = " + emf.getPersistenceUnitUtil().isLoaded(refMem4)); //false
 
+        Hibernate.initialize(refMem4); //프록시 객체 강제 초기화
+
+        System.out.println("isLoaded ? = " + emf.getPersistenceUnitUtil().isLoaded(refMem4)); //true
+        System.out.println("refMem4 = " + refMem4.getId() + ":" + refMem4.getName());
+        //강제 초기화에 따라 db query가 보내지지 않고 1차 캐시에서 값 가져옴
     }
 
 
