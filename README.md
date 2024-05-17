@@ -102,7 +102,7 @@ IDENTITY : key 바로 받도록 예외 허용, SEQUENCE : db로부터 한번에 
          - null x -> 중복 방지 column pk
        => 1대다 연관관계로 설정
   
-##JPQL 
+## JPQL 
 sql 추상화 -> 엔티티 검색
 - 엔티티와 속성은 대소문자 구별
 - jpql 키워드는 대소문자 구별 x
