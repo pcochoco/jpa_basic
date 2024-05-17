@@ -100,4 +100,24 @@ IDENTITY : key 바로 받도록 예외 허용, SEQUENCE : db로부터 한번에 
          - 변경 시 추적 x
          - 변경 시 엔티티 값 삭제 후 저장
          - null x -> 중복 방지 column pk
-       => 1대다 연관관계로 설정 
+       => 1대다 연관관계로 설정
+  
+##JPQL 
+sql 추상화 -> 엔티티 검색
+- 엔티티와 속성은 대소문자 구별
+- jpql 키워드는 대소문자 구별 x
+- entity 이름 사용
+- 별칭 필수 (as 생략)
+- 반환타입 명확 : TypedQuery (x : Query)
+- 반환값 1개 이상 : getResultList (x : getSingleResult)
+- 파라미터 =:
+
+
+1. projection : select 조회, distinct 활용
+2. pasing : 필요한 데이터만
+3. join, subquery, 조건식, 함수
+4. 경로표현식
+5. fetch join
+6. 다형성 쿼리
+7. named 쿼리
+8. 벌크 연산
