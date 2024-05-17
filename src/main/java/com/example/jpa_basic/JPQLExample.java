@@ -50,6 +50,21 @@ public class JPQLExample {
                 .setMaxResults(10)
                 .getResultList();
 
-        
+
+        //조건식
+        //1. case
+        String caseQuery =
+                "select" +
+                        "case when m.age > 10 then '학생요금'" +
+                        "else '일반요금'"+
+                        "end"+
+                        "from Member m";
+        //2. coalesce : null 아니면 반환, null 이면 두번째 파라미터
+        String coalesceQuery = "select coalesce(m.name, '이름없는 회원') from Member m";
+
+        //3.nullif : 파라미터 두 값이 같으면 null 반환, 아니면 첫번째 파라미터
+        String nullifQuery = "select nullif(m.name, 'memberA') from Member m";
+
+                
     }
 }
