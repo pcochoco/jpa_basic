@@ -47,8 +47,7 @@ application과 JDBC 사이 동작에서 동작 <br>
 
 ## Mapping
 
-[Field, Column]()
-
+Field, Column
 키 매핑
 IDENTITY : key 바로 받도록 예외 허용, SEQUENCE : db로부터 한번에 받아올 양 정해둠, TABLE : key 생성용, (DEFAULT)AUTO
 [Key]()
@@ -93,7 +92,7 @@ IDENTITY : key 바로 받도록 예외 허용, SEQUENCE : db로부터 한번에 
 1. 엔티티 타입 -> 수정되어도 식별자로 추적
 2. 값 타입 -> 엔티티 생명주기 의존, 단순 값
      - 기본 값 : 보통 수정 불가
-     - Embedded : 기본 값 모아 새 값으로
+     - [Embedded](https://github.com/pcochoco/jpa_basic/blob/main/src/main/java/com/example/jpa_basic/domain/Address.java) : 기본 값 모아 새 값으로 
      - 불변 객체 : 공유되더라도 수정 불가
      - collection : 값 타입 하나 이상 지정 시 List, ... -> db로 저장할 별도 테이블 (권장 x)
          - 식별자 개념 x
