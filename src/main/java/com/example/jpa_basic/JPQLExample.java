@@ -43,5 +43,13 @@ public class JPQLExample {
         for(MemberDto m : dtoList){
             System.out.println("m = " + m.getName() + "," + m.getAge());
         }
+
+        //pasing : 필요 데이터만 가져옴
+        List<Member> pasingList = em.createQuery("select m from Member m order by m.age desc", Member.class)
+                .setFirstResult(0)
+                .setMaxResults(10)
+                .getResultList();
+
+        
     }
 }
