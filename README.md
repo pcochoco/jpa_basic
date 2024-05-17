@@ -49,6 +49,8 @@ application과 JDBC 사이 동작에서 동작 <br>
 
 Field, Column
 키 매핑
+
+
 IDENTITY : key 바로 받도록 예외 허용, SEQUENCE : db로부터 한번에 받아올 양 정해둠, TABLE : key 생성용, (DEFAULT)AUTO
 [Key]()
 
