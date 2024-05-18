@@ -108,19 +108,32 @@ IDENTITY : key 바로 받도록 예외 허용, SEQUENCE : db로부터 한번에 
 ## [JPQL](https://github.com/pcochoco/jpa_basic/blob/main/src/main/java/com/example/jpa_basic/JPQLExample.java)
 sql 추상화 -> 엔티티 검색
 - 엔티티와 속성은 대소문자 구별
-- jpql 키워드는 대소문자 구별 x
-- entity 이름 사용
-- 별칭 필수 (as 생략)
-- 반환타입 명확 : TypedQuery (x : Query)
-- 반환값 1개 이상 : getResultList (x : getSingleResult)
-- 파라미터 =:
+  - pql 키워드는 대소문자 구별 x
+  - entity 이름 사용
+  - 별칭 필수 (as 생략)
+  - 반환타입 명확 : TypedQuery (x : Query)
+    - 반환값 1개 이상 : getResultList (x : getSingleResult)
+  - 파라미터 =:
+- projection : select 조회, distinct 활용
+- pasing : 필요한 데이터만
+- join
+  - inner, outer, theta
+- 조건식 : case, coalesce(null이 아니라면 반환), nullif(동일값이면 null 반환)
+- subquery, 함수
+- ### 경로표현식
+.을 찍어 객체 그래프 탐색
+  - 상태 필드 (추가 탐색 x)
+  - 단일 값 연관 필드 (XToOne의 경우 / 묵시적 inner join, 추가 탐색 가능)
+  - 컬렉션 값 연관 필드 (XToMany / 묵시적 inner join / explicit join 추가 탐색 가능)
+- ### fetch join
+join으로 발생할 수 있는 N + 1 문제의 극복 
+
+=> distinct 활용해서 1번씩, 1차 cache로 바로 조회 
 
 
-1. projection : select 조회, distinct 활용
-2. pasing : 필요한 데이터만
-3. join, subquery, 조건식, 함수
-4. 경로표현식
-5. fetch join
-6. 다형성 쿼리
-7. named 쿼리
-8. 벌크 연산
+<-> pasing 불가, 1 collection only, 별칭 불가 
+- 다형성 쿼리
+  - type : 특정 자식 대상
+  - treat : 부모를 자식처럼 
+- named 쿼리 : 미리 정의, 로딩 시간에 검증 -> 재활용 
+- 벌크 연산 : 대량 업데이트 
