@@ -32,7 +32,9 @@ application과 JDBC 사이 동작에서 동작 <br>
      쓰기 지연 sql 저장소에 sql 저장 후 commit 되는 순간 db로
 3. dirty checking
    변경 시 1차 캐시 저장 snapshot과 비교 후 달라진 부분에 맞게 sql을 생성해 쓰기 지연 sql로 저장, commit 시 flush
-   *flust : 변경 내용을 db에 반영 (em.flush, transaction commit, JPQL 실행) 
+
+
+   *flush : 변경 내용을 db에 반영 (em.flush, transaction commit, JPQL 실행) 
 <영속성 생명주기> 
 - new, transient (비영속) : 영속성 context와 관련 x
 - managed (영속) : 객체 영구 저장 = db 관리
