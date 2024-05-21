@@ -115,7 +115,7 @@ sql 추상화 -> 엔티티 검색
     - 반환값 1개 이상 : getResultList (x : getSingleResult)
   - 파라미터 =:
 - projection : select 조회, distinct 활용
-- pasing : 필요한 데이터만
+- paging : 필요한 데이터만
 - join
   - inner, outer, theta
 - 조건식 : case, coalesce(null이 아니라면 반환), nullif(동일값이면 null 반환)
